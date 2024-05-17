@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Log;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
@@ -16,6 +17,8 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
+        Log::info('done');
+
         return [
             "name"          =>  $this->faker->title ,
             "slug"          =>  $this->faker->slug ,
