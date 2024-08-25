@@ -25,7 +25,7 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-6 col-12" dir="rtl">
                         <label for="parentSelect" class="form-label">مادر</label>
-                        <select id="parentSelect" class="form-select form-select-transparent" data-control="select2" data-placeholder="Select an option">
+                        <select id="parentSelect" name="parent_id" class="form-select form-select-transparent" data-control="select2" data-placeholder="Select an option">
                             <option>انتخاب دسته بندی مادر</option>
                             @foreach($data["parents"] as $parent)
                                 <option  value="{{ $parent->id }}">{{ $parent->name }}</option>

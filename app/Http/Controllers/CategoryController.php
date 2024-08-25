@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Filters\CategoryFilter;
 use App\Http\Requests\Category\CreateCategoryRequest;
-use App\Http\Requests\category\UpdateCategoryRequest;
+use App\Http\Requests\Category\UpdateCategoryRequest;
 use App\Models\Category;
 use App\Services\CategoryService;
 use Illuminate\Http\Request;
