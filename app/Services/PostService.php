@@ -23,7 +23,7 @@
 
             $image_name = file_name($data["image"]);
             $data = array_merge($data , ["image" => $image_name]);
-            $data['admin_id'] = Auth::guard('admin')->user()->id;
+            $data['admin_id'] = Auth::guard('admins')->user()->id;
             Post::create($data);
 
             image_creator(path: "posts" , file_name: $image_name);
