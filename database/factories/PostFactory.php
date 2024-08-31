@@ -26,7 +26,9 @@ class PostFactory extends Factory
             'content_type_id'   =>  $this->faker->randomElement( ContentType::all()->pluck('id')->toArray() ) ,
             'image'             =>  rand(1,3).'jpg' ,
             'status'            =>  $this->faker->randomElement([1,0]) ,
-            'description'       =>  $this->faker->text
+            'description'       =>  $this->faker->text,
+            'excerpt'           =>  $this->faker->sentence(5),
+            'read_time'         =>  '5 min',
         ];
     }
 }

@@ -34,4 +34,11 @@ return [
     "image_index"              =>  "عکس ها" ,
     "image_create"              =>  "ساخت عکس جدید" ,
 
+    'posts' =>  [
+        'active'        =>  'فعال',
+        'de_active'     =>  'غیر فعال',
+        'excerpt'       =>  'خلاصه',
+        'read_time'     =>  'زمان مطالعه',
+    ],
+
 ];

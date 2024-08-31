@@ -24,6 +24,7 @@
             $image_name = file_name($data["image"]);
             $data = array_merge($data , ["image" => $image_name]);
             $data['admin_id'] = Auth::guard('admins')->user()->id;
+            $data['description'] = preg_replace('/font-family:\s*[^;]+;?/', '', $data['description']);
             Post::create($data);
 
             image_creator(path: "posts" , file_name: $image_name);
@@ -45,6 +46,7 @@
 
                  $image_name = file_name($data["image"]);
                  $data = array_merge($data , ["image" => $image_name]);
+                 $data['description'] = preg_replace('/font-family:\s*[^;]+;?/', '', $data['description']);
 
                  $this->updates(data: $data , item: $post);
 

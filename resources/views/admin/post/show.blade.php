@@ -96,6 +96,16 @@
                             <img src="{{ get_image("posts/".$data["post"]->image) }}" class="img-fluid rounded-3" loading="lazy" alt="{{ $data["post"]->title }}">
                         </div>
 
+                        <div class="p-3">
+                            <label for="excerpt" class="required form-label">{{ trans('panel.posts.excerpt') }}</label>
+                            <textarea id="excerpt" name="excerpt" class="form-control">{{ $data['post']->excerpt }}</textarea>
+                        </div>
+
+                        <div class="p-3">
+                            <label for="read_time" class="required form-label">{{ trans('panel.posts.read_time') }}</label>
+                            <input id="read_time" name="read_time" class="form-control" value="{{ $data['post']->read_time }}"/>
+                        </div>
+
 
                     </div>
                 </div>

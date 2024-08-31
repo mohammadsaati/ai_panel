@@ -20,7 +20,9 @@ return new class extends Migration
             $table->string("image");
             $table->unsignedBigInteger("content_type_id");
             $table->integer("status")->default(1)->comment("1 Active | 0 deActive");
-            $table->text("description");
+            $table->text("excerpt")->nullable();
+            $table->longText("description");
+            $table->string('read_time')->nullable();
             $table->timestamps();
 
             $table->foreign("admin_id")->on("admins")->references("id")
