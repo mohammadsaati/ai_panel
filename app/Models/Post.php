@@ -15,6 +15,7 @@ class Post extends Model
         "admin_id"      ,   "status"                ,
         "category_id"   ,   "content_type_id"       ,
         "image"         ,   "description"           ,
+        'excerpt'       ,   'read_time'             ,
     ];
 
     public function category()
