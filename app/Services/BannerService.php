@@ -24,7 +24,7 @@
      public function updateBanner(array $data , Banner $banner) : void
      {
          $data = array_merge($data , [
-             "post_id"   =>  $data["product_id"] ?? null ,
+             "post_id"      =>  $data["post_id"] ?? null ,
              "category_id"  =>  $data["category_id"] ?? null ,
              "link"         =>  $data["link"] ?? null
          ]);

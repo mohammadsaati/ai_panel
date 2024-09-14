@@ -29,7 +29,7 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
                         <div class="mb-10">
-                            <label for="post_id" class="form-label">محصول</label>
+                            <label for="post_id" class="form-label">پست</label>
                             <select id="post_id"  class="form-select" name="post_id" @if($data["banner"]->type != 1) disabled @endif>
                                 <option>انتخاب کنید</option>
                                 @foreach($data["posts"] as $post)
