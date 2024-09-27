@@ -54,6 +54,7 @@ Route::middleware(['auth:admins'])->group(function () {
         Route::post("store" , "store")->name("post.store");
         Route::get("show/{post:slug}" , "show")->name("post.show");
         Route::post("update/{post}" , "update")->name("post.update");
+        Route::delete("delete/{post}" , "delete")->name("post.delete");
     });
     /*********************************
      * ****** POSTs Routes **********

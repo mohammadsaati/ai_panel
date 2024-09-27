@@ -69,6 +69,7 @@
 
 @yield("scripts" , "")
 @yield("extra_scripts" , "")
+@stack('footer')
 
 </body>
 <!--end::Body-->

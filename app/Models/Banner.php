@@ -11,7 +11,7 @@ class Banner extends Model
     use HasFactory,FilterTrait;
     protected $fillable = [
         'image'         ,       'type'          ,
-        'product_id'    ,       'category_id'   ,
+        'post_id'       ,       'category_id'   ,
         'link'          ,       'status'
     ];
 }

@@ -1,16 +1,12 @@
-<div>
-
-    @if($config["item"][$config["status_field"]])
-        <button type="button" class="btn btn-danger" onclick="changeStatusAction( {{ json_encode($config) }} )">
-            غیر فعال کردن
-        </button>
-    @else
-        <button type="button" class="btn btn-success" onclick="changeStatusAction( {{ json_encode($config) }} )">
-            فعال کردن
-        </button>
-    @endif
-
-</div>
+@if($config["item"][$config["status_field"]])
+    <button type="button" class="btn btn-danger" onclick="changeStatusAction( {{ json_encode($config) }} )">
+        غیر فعال کردن
+    </button>
+@else
+    <button type="button" class="btn btn-success" onclick="changeStatusAction( {{ json_encode($config) }} )">
+        فعال کردن
+    </button>
+@endif
 
 @section("scripts")
     <script>
