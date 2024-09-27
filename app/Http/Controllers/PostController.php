@@ -72,4 +72,9 @@ class PostController extends Controller
 
     }
 
+    public function delete(Post $post): \Illuminate\Http\JsonResponse
+    {
+        return $this->service->delete(post: $post);
+    }
+
 }

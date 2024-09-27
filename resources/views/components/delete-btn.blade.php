@@ -1,23 +1,18 @@
 
-<form onsubmit="DeleteBtn(event,{{ json_encode($config) }})">
+<button type="button" class="btn btn-icon btn-bg-light btn-color-danger" onclick="DeleteBtn( {{ json_encode($config) }} )">
+    {!! getIcon(name:'trash-square' , class: 'fs-2x text-danger') !!}
+</button>
 
-    <button type="submit" class="btn btn-icon btn-danger">
-        {!! getIcon(name:'trash-square' , class: 'fs-2') !!}
-    </button>
-</form>
-
-@section("scripts")
+@push("footer")
     <script>
-        function DeleteBtn(e , config)
+        function DeleteBtn(config)
         {
-            e.preventDefault();
-            console.log(config);
-
             Swal.fire({
                 icon: 'question' ,
                 title: config.alert_title,
                 showCancelButton: true,
                 confirmButtonText: 'بله',
+                confirmButtonColor: '#f1416c',
                 cancelButtonText: `خیر`,
             }).then((result) => {
                 /* Read more about isConfirmed, isDenied below */
@@ -59,4 +54,4 @@
 
 
     </script>
-@endsection
+@endpush

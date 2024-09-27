@@ -48,12 +48,12 @@
                         <th scope="col"><b>دسته بندی</b></th>
                         <th scope="col"><b>محتوا</b></th>
                         <th scope="col"><b>وضعیت</b></th>
-                        <th scope="col"><b>ویرایش</b></th>
+                        <th scope="col"><b>عملیات</b></th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    @php($i = 1)
+                    @php $i = 1; @endphp
                     @foreach($data["posts"] as $post)
                         <tr>
                             <td>{{ $i }}</td>
@@ -61,25 +61,35 @@
                             <td>{{$post->category->name }}</td>
                             <td>{{$post->contentType->name }}</td>
                             <td id="tr-{{ $post->id }}">
-                                @php(
-                                        $configs = [
-                                                "item" =>  $post ,
-                                                "post_id" => $post->id ,
-                                                "ajax_url_name" =>  "post.update" ,
-                                                "func"  => "" ,
-                                                "ajax_data" => [
-                                                    "status" => $post->status == 1 ? 0 : 1
-                                                ]
-                                            ]
-                                        )
+                                @php
+                                    $configs = [
+                                                   "item" =>  $post ,
+                                                   "post_id" => $post->id ,
+                                                   "ajax_url_name" =>  "post.update" ,
+                                                   "func"  => "" ,
+                                                   "ajax_data" => [
+                                                       "status" => $post->status == 1 ? 0 : 1
+                                                   ]
+                                               ];
+
+                                    $deleteConfig = [
+                                         "item" =>  $post ,
+                                         "post_id" => $post->id ,
+                                         "ajax_url_name" =>  "post.delete" ,
+                                     ];
+                                @endphp
 
                                 <x-statusBtn :config="$configs" />
 
+
                             </td>
                             <td>
-                                <a href="{{ route("post.show" , ["post" => $post->slug]) }}">
-                                    {!! getIcon(name:"notepad-edit" , class: "fs-1 text-primary" , type: "duotone") !!}
-                                </a>
+                               <div class="d-flex justify-content-center align-items-center">
+                                   <a href="{{ route("post.show" , ["post" => $post->slug]) }}">
+                                       {!! getIcon(name:"notepad-edit" , class: "fs-1 text-primary" , type: "duotone") !!}
+                                   </a>
+                                   <x-deleteBtn :config="$deleteConfig"/>
+                               </div>
                             </td>
                         </tr>
                         @php($i++)
