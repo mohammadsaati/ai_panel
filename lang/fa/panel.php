@@ -18,6 +18,7 @@ return [
     "category_create_title"      =>  "ایجاد دسته بندی" ,
 
     "error_title"               =>  "دقت کنید!!" ,
+    "error_message"             =>  "مشکلی به وجودآمده لطفا بعدا امتحان کنید" ,
     "status_alert_title"        =>  "آیا مایل به تغییر هستید؟" ,
     "status_delete_title"       =>  "آیا می خواهید حدف کنید؟" ,
     "delete_msg"                =>  "با موفقیت حدف شد",

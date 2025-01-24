@@ -77,5 +77,13 @@ class RoleSeeder extends Seeder
 
         $admin->assignRole($role->id);
 
+        $role = Role::firstOrCreate(['name' => 'slider' , 'guard_name' => 'admins']);
+        $role->givePermissionTo(Permission::firstOrCreate(['name' => 'slider read all' , 'guard_name' => 'admins']));
+        $role->givePermissionTo(Permission::firstOrCreate(['name' => 'slider create' , 'guard_name' => 'admins']));
+        $role->givePermissionTo(Permission::firstOrCreate(['name' => 'slider edit' , 'guard_name' => 'admins']));
+        $role->givePermissionTo(Permission::firstOrCreate(['name' => 'slider delete' , 'guard_name' => 'admins']));
+
+        $admin->assignRole($role->id);
+
     }
 }

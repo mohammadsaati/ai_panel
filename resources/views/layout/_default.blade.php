@@ -46,9 +46,9 @@
 @endsection
 
 @if($scripts)
-    @section('scripts')
+    @push('footer')
         {{ $scripts }}
-    @endsection
+    @endpush
 @endif
 
 @if($extra_scripts)
