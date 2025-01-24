@@ -76,6 +76,26 @@ return [
             ]
      ] ,
         [
+            'title' => "اسلایدر ها",
+            'root' => true,
+            'icon' => 'row-horizontal',
+            'new-tab' => false,
+            'submenu' => [
+                [
+                    'title' => 'اسلایدر جدید',
+                    'new-tab' => false,
+                    'permission' => 'banner create' ,
+                    'page'  =>  'admin/slider/create'
+                ] ,
+                [
+                    'title' => 'اسلایدر ها',
+                    'new-tab' => false,
+                    'permission' => 'banner read all' ,
+                    'page'  =>  'admin/slider/index'
+                ]
+            ]
+        ],
+        [
             'title' => "بنر ها",
             'root' => true,
             'icon' => 'row-horizontal',
