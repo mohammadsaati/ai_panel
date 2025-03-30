@@ -45,9 +45,21 @@
                     </div>
                 </div>
 
-
-                <div class="row">
-                    @include("admin.section.details.post_info" , $data)
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12">
+                    <div class="mb-10">
+                        <label for="posts" class="form-label">post</label>
+                        <x-select2 :options="[
+                            'id' => 'posts',
+                            'name' => 'posts[]',
+                            'data-control' => 'select2',
+                            'data-placeholder' => 'select a post',
+                            'multiple' => 'multiple',
+                            'data-allow-clear' => 'true',
+                            'data-close-on-select' => 'false',
+                            'data-url' => route('component.post.index'),
+                            'data-selected' => old('posts', [])
+                        ]" />
+                    </div>
                 </div>
 
                 <div class="row">
