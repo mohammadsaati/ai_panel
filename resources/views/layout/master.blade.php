@@ -37,6 +37,8 @@
         {!! sprintf('<link rel="stylesheet" href="%s">', asset($path)) !!}
     @endforeach
     <!--end::Custom Stylesheets-->
+
+    @stack('header')
 </head>
 <!--end::Head-->
 

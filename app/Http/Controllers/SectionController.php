@@ -29,7 +29,6 @@ class SectionController extends Controller
     public function create()
     {
         $data["title"] = "سکشن جدید";
-        $data["posts"] = Post::all();
 
         return view($this->view_folder."create" , compact("data"));
     }
