@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Filters\PostFilter;
 use App\Http\Requests\Post\CreatePostRequest;
 use App\Http\Requests\Post\UpdatePostRequest;
+use App\Http\Resources\post\PostResource;
 use App\Models\Category;
 use App\Models\ContentType;
 use App\Models\Post;
@@ -26,6 +27,11 @@ class PostController extends Controller
     {
         $data["title"] = trans("panel.post_index");
         $data["posts"] = $this->service->showAll($filter);
+
+        if (request()->ajax()) {
+
+            return PostResource::collection($data["posts"]);
+        }
 
         return view($this->view_folder."index" , compact("data"));
     }
