@@ -1,8 +1,8 @@
 <?php
 
- namespace App\Filters; 
+ namespace App\Filters;
 
- use App\Filters\Filter; 
+ use App\Filters\Filter;
 
- class PublicFilter extends Filter  
+ class PublicFilter extends Filter
 {}

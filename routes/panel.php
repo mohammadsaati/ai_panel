@@ -9,7 +9,9 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\UserTypeController;
 use Illuminate\Support\Facades\Route;
+
 
 Route::middleware(['auth:admins'])->group(function () {
     Route::get('/', [DashboardController::class, 'index']);
@@ -133,5 +135,14 @@ Route::middleware(['auth:admins'])->group(function () {
     /*********************************
      * ****** slider Routes *******
      *********** END **************/
+
+     Route::controller(UserTypeController::class)->prefix('user-type')->as('user-type.')->group(function () {
+        Route::get('index', 'index')->name('index')->can('user_type read all');
+        Route::get('create', 'create')->name('create')->can('user_type create');
+        Route::post('store', 'store')->name('store')->can('user_type create');
+        Route::get('edit/{userType}', 'edit')->name('edit')->can('user_type edit');
+        Route::post('update/{userType}', 'update')->name('update')->can('user_type edit');
+        Route::delete('delete/{userType}', 'delete')->name('delete')->can('user_type delete');
+     });
 
 });

@@ -12,6 +12,26 @@ return [
             'new-tab' => false,
         ],
 
+        [
+            'title' => "نوع کاربر",
+            'root' => true,
+            'icon' => 'user', // or can be 'flaticon-home' or any flaticon-*
+            'new-tab' => false,
+            'submenu' => [
+                [
+                    'title' => 'نوع کاربر ها',
+                    'new-tab' => false,
+                    'permission' => 'user_type read all' ,
+                    'page'  =>  'admin/user-type/index'
+                ] ,
+                [
+                    'title' => 'ساخت نوع کاربر',
+                    'new-tab' => false,
+                    'permission' => 'user_type create' ,
+                    'page'  =>  'admin/user-type/create'
+                ]
+            ]
+        ],
 
         [
             'title' => "دسته بندی",
