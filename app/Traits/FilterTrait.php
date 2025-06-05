@@ -11,7 +11,7 @@ trait FilterTrait
     public function scopeFilter($query ,  $filter = PublicFilter::class)
     {
         if (is_null($this->filtering_class))
-            return $filter->apply($query);
+            return (new $filter(request()))->apply($query);
 
         return (new $this->filtering_class(request()))->apply($query);
     }

@@ -17,12 +17,16 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->string("user_type")->default("admin");
+            $table->unsignedBigInteger("type_id");
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('avatar')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('type_id')->references('id')->on('user_types')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
         });
     }
 
