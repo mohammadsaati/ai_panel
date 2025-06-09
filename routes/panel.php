@@ -9,8 +9,10 @@ use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SectionController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserTypeController;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::middleware(['auth:admins'])->group(function () {
@@ -18,6 +20,14 @@ Route::middleware(['auth:admins'])->group(function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    Route::controller(UserController::class)->prefix('user')->as('user.')->group(function () {
+        Route::get('index', 'index')->name('index');
+        Route::get('create', 'create')->name('create');
+        Route::post('store', 'store')->name('store');
+        Route::get('edit/{user}', 'edit')->name('edit');
+        Route::post('update/{user}', 'update')->name('update');
+        Route::delete('delete/{user}', 'delete')->name('delete');
+    });
 
     /*********************************
      * ****** Category Routes *******
