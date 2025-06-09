@@ -1,6 +1,14 @@
 <?php
 
 return [
+
+    'user' => 'کاربر',
+    'user-index' => 'لیست کاربران',
+    'user-create' => 'ایجاد کاربر',
+    'user-edit' => 'ویرایش کاربر',
+    'user-show' => 'نمایش کاربر',
+    'user-update' => 'ویرایش کاربر',
+
     'user-type' => 'نوع کاربر',
     'user-type-index' => 'لیست نوع کاربران',
     'user-type-create' => 'ایجاد نوع کاربر',
